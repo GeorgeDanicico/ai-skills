@@ -42,7 +42,12 @@ Show a tiny progress marker at the top of each teaching message, e.g. `[2/6 · E
 
 1. Locate the topics file (see the configuration table). It may be long: search it (e.g. grep for the topic number or keyword) and read only the relevant section rather than loading the whole file.
 2. If the user named a topic (number, title, or keyword), use it.
-3. Otherwise, if the file uses checkboxes (`- [ ]` / `- [x]`), offer the **next 3 unchecked topics** and let the user pick. If there are no checkboxes, offer 3 sensible candidates.
+3. If the user named only an area (e.g. "caching"), or nothing at all, offer **3 unchecked topics** and let them pick. **Don't just take the next ones in file order.** If the file uses checkboxes (`- [ ]` / `- [x]`), first find what the learner has already done (all `- [x]` lines), then choose like this:
+   - **Prerequisites first.** Offer a topic only when what it builds on is already done (`- [x]`) or is common background. Within an area, a topic that refines an earlier one needs that one done first (e.g. an "advanced X" topic needs the basic "X" topic done).
+   - **Don't jump into untouched advanced areas.** Pick from areas the learner has already started. Pick from a new area only when its foundation is covered (use any prerequisites or "suggested foundation" the file lists), and then only that area's introductory topics.
+   - **Mix it up.** If the user named no area, pick from at least two different areas, and favour topics that extend what they recently learned.
+   - In one line each, say why the topic is unlocked (e.g. "builds on 107, which you've done").
+   - If the file has no checkboxes, offer 3 sensible, self-contained candidates.
 4. Confirm the choice in one line, then start.
 
 ### 1. Opening — ~2 min `[1/6 · Overview]`

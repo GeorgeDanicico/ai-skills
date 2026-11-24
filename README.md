@@ -31,7 +31,7 @@ Teaches one short topic (20 minutes max) from a topics file you provide: a clear
 #### Use
 
 ```
-/interactive-topic-tutor               # suggests the next unchecked topics
+/interactive-topic-tutor               # suggests 3 unlocked topics (prerequisites done)
 /interactive-topic-tutor topic 42      # teaches a specific topic
 teach me the next topic                # natural language works too
 ```
